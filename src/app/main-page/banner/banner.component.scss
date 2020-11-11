@@ -1,0 +1,94 @@
+.banner_backgroud{
+    margin-top: 12px;
+    background-color: #E0DDD4;
+    width: 100%;
+    position: relative;
+
+    .line_top{
+        border-top: 5px solid #ECEBE5;
+        width: calc(100% - ((100vw - 1400px)/2));
+        position: absolute;
+        left: calc((100vw - 1400px)/2);
+        top: 45px;
+
+        @media (max-width: 1450px){
+            left: 20px;
+            width: calc(100%  - 20px);
+        }
+    }
+
+    .line_left{
+        border-left: 5px solid #ECEBE5;
+        height: calc(100% - 100px);
+        position: absolute;
+        left: calc((100vw - 1400px)/2);
+        top: 50px;
+
+        @media (max-width: 1450px){
+            left: 20px;
+        }
+    }
+
+    .line_bottom{
+        border-top: 5px solid #ECEBE5;
+        width: calc(100% - ((100vw - 1400px)/2));
+        position: absolute;
+        left: calc((100vw - 1400px)/2);
+        bottom: 45px;
+
+        @media (max-width: 1450px){
+            left: 20px;
+            width: calc(100%  - 20px);
+        }
+    }
+
+    .content{
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .text{
+            margin: 0px;
+            max-width: 550px;
+
+            @media (max-width: 1450px){
+                margin: 60px 0 60px 35px;
+            }
+
+            h1{
+                font-size: 49px;
+                font-family: "lovelo";
+                line-height: 90%;
+                color: white;
+            }
+
+            p{
+                font-size: 15px;
+                color: #8e8d86;
+            }
+
+            button{
+                margin-top: 40px;
+                border-radius: 2em;
+                border: none;
+                font-family: "lovelo";
+                color: black;
+                font-size: 11px;
+                padding: 10px 30px;
+                box-shadow: 0px 1px 2px rgb(53, 49, 42);
+                background-image: linear-gradient(#FFF,#EEE);
+            }
+        }
+
+        img{
+            z-index: 10;
+
+            @media (max-width: 700px){
+                display: none;
+            }
+        }
+
+    }
+}
+

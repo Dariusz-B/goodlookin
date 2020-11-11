@@ -1,0 +1,103 @@
+.top-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    flex-wrap: wrap;
+
+    @media (max-width: 900px){
+        flex-direction: column;
+    }
+
+    .content-right{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        @media (max-width: 900px){
+            justify-content: center;
+            flex: 1 0 45%;
+        }
+
+        form{
+            border: 1px solid #ddd;
+            border-radius: 2em;
+            display: flex;
+            justify-content: space-between;
+            margin-right: 10px;
+            width: 240px;
+
+            @media (max-width: 900px){
+                width: 80%;
+                margin: 20px 0;
+            }
+
+            ::placeholder{
+                color:  #aaa;
+            }
+
+            img{
+                margin-top: 3px;
+            }
+            
+            input{
+                width: 100%;
+                border: none;
+                background: none;
+                font-size: 13px;
+                padding: 8px  14px;
+            }
+        }
+
+        button{
+            border: none;
+            background-color: transparent;
+            margin-right: 4px;
+        }
+
+        .link{
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+
+            img{
+                margin: 0 8px;
+            }
+            margin: 10px 5px;
+        }
+
+        .cash{
+            border: none;
+            margin-right: 4px;
+            border-radius: 2em;
+            background-image: linear-gradient(#FE9F5D,#FF8331,#F96A0A);
+            font-family: "lovelo";
+            color: #fff;
+            font-size: 11px;
+            font-weight: 300;
+            padding: 8px 30px;
+            box-shadow: 0px 0px 2px #333;
+        }
+    }
+}
+
+.splitter{
+    margin: auto;
+    display:flex;
+    align-items: center;
+    color: #ddd;
+    font-family: "lovelo";
+    font-size: 11px;
+
+    p{
+        margin-left: 50px;
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+
+    .line{
+        border-top: 1px solid;
+        width:100%;
+        margin-right: 20px;
+    }
+}

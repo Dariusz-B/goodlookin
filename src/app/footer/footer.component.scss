@@ -1,0 +1,70 @@
+.footer{
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    max-width: 1200px;
+    padding: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    border: 1px solid #e5e5e5;
+    font-size: 13px;
+
+    @media (max-width: 700px){
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .group{
+        max-width: 450px;
+        margin: 20px;
+        
+        h1{
+            font-size: 14px;
+            font-family: "lovelo";
+        }
+        .link{
+            color: black;
+            font-size: 13px;
+        }
+        
+        .number{
+            margin:  10px 0;
+            font-size: 30px;
+            font-family: "lovelo";
+            color: #a8a8a8;
+        }
+        .orange{
+            color: #ff6600;
+        }
+        p{
+            color: #a8a8a8;
+        }
+
+        form{
+            margin-bottom: 10px;
+
+            input{
+                border: 1px solid #e5e5e5;
+                border-radius: 2em;
+                color: #a8a8a8;
+                font-size: 12px;
+                padding: 8px 20px;
+                width: 200px;
+                margin-right: 10px;
+            }
+            .btn{
+                border: none;
+                border-radius: 2em;
+                background-image: linear-gradient(#FE9F5D,#FF8331,#F96A0A);
+                font-family: "lovelo";
+                color: #fff;
+                font-size: 11px;
+                font-weight: 300;
+                padding: 8px 30px;
+                box-shadow: 0px 0px 2px #333;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,104 @@
+.products_container{
+    margin: auto;
+    text-align: center;
+
+    .categories{
+        display: flex;
+        align-items: center;
+
+        @media (max-width: 600px){
+            flex-direction: column;
+        }
+
+        .item{
+            font-family: "lovelo";
+            font-size: 18px;
+            display: flex;
+            padding: 30px;
+            color: #aaa;
+            border: none;
+            background: transparent;
+
+            @media (max-width: 600px){
+                width: 100%;
+            }
+
+            &:not(:last-of-type){
+                margin-right: 40px;
+
+                @media (max-width: 600px){
+                    margin: 0;
+                    border-bottom: 1px solid #aaa;
+                }
+            }
+
+
+
+            img{
+                margin-left: 10px;
+            }
+        }
+
+        .active{
+            color: black;                        
+        }
+
+        .line{
+            border-top: 1px solid #e5e5e5;
+            width: 100%;
+        }
+    }
+
+    .products{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @media (max-width: 480px){
+            justify-content: center;
+        }
+
+        .item{
+            max-width: 250px;
+            flex: 1 0 22%;
+            margin: 20px;
+            text-align: left;
+
+            .img_container{
+                width: 100%;
+                text-align: center;
+            }
+
+            h1{
+                font-family: "lovelo";
+                font-size: 16px;
+                margin-bottom: 4px;
+            }
+
+            p{
+                font-size: 14px;
+                margin-top: 4px;
+                color:  #aaa;
+            }
+            hr{
+                margin: 20px 0;
+                width: 100%;
+                height: 1px;
+                background-color: #e5e5e5;
+                border: none;
+            }
+        }
+    }
+
+    .more{
+        margin-top: 40px;
+        border-radius: 2em;
+        border: none;
+        font-family: "lovelo";
+        color: black;
+        font-size: 11px;
+        padding: 10px 30px;
+        box-shadow: 0px 1px 2px rgb(53, 49, 42);
+        background-image: linear-gradient(#FFF,#EEE);
+    }
+}

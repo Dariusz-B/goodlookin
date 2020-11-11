@@ -1,0 +1,51 @@
+@import "https://unpkg.com/swiper/swiper-bundle.css";
+
+.swiper{
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+    white-space: nowrap;
+
+    .myWrapper{
+        margin: auto;
+        display: flex;
+        font-family: "lovelo";
+        align-items: center;
+
+        border-right: 1px solid #e5e5e5;
+
+        @media (max-width: 900px){
+            flex-direction: column;
+        }
+
+        .title{
+            height: 100%;
+            padding: 10px 0;
+            margin: 0 30px;
+
+            @media (max-width: 900px){
+                width: 100%;
+                border-bottom: 1px solid #e5e5e5;
+            }
+        }
+
+        .swiper-container{
+            width: 100%;
+        }
+
+        .swiper-slide {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        border-left: 1px solid #e5e5e5;
+        
+            &:last-of-type{
+                border-right: 1px solid #e5e5e5;
+            }
+        }
+    }
+}
+
