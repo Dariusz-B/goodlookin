@@ -1,20 +1,8 @@
 <div class="menu maxWidth">
-    <div class="item">
-        ODZIEŻ <img src="./../../../assets/svg/iconmonstr-arrow-80.svg">
-    </div>
-    <div class="item">
-        AKCESORIA <img src="./../../../assets/svg/iconmonstr-arrow-80.svg">
-    </div>
-    <div class="item">
-        TRENDY <img src="./../../../assets/svg/iconmonstr-arrow-80.svg">
-    </div>
-    <div class="item">
-        MARKI <img src="./../../../assets/svg/iconmonstr-arrow-80.svg">
-    </div>
-    <div class="item">
-        NOWOŚCI
-    </div>
-    <div class="item">
-        PROMOCJE
+    <div class="item" *ngFor="let menuItem of (menu$ | async).menuItems">
+        {{menuItem.name}}<img *ngIf="menuItem.child" src="./../../../assets/svg/iconmonstr-arrow-80.svg">
+        <div *ngIf="menuItem.child" class="subitem_container">
+            <div *ngFor="let subitem of menuItem.child" class="subitem">{{subitem.name}}</div>
+        </div>
     </div>
 </div>

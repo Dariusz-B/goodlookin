@@ -7,25 +7,44 @@
 
     flex-wrap: wrap;
 
-    @media (max-width: 700px){
-        flex-direction: column;
-    }
-
     .item{
-        display: flex;
+        display: block;
         align-items: center;
-        margin: 12px 20px;
+        padding: 12px 20px;
+        position: relative;
+        cursor: pointer;
         
-        @media (max-width: 700px){
-            border-bottom: 1px  solid gray;
-            width: 100%;
-            justify-content: center;
-            padding: 10px 0;
-            margin: 15px auto;
-        }
-
         img{
             margin-left:  10px;
+        }
+
+        &:hover  {
+            background-color: #eee;
+
+            &:hover .subitem_container{
+                display:block;
+            }
+        }
+
+        .subitem_container{
+            margin-top: 10px;
+            left: 0px;
+            width: 100%;
+            display: none;
+            position: absolute;
+            background-color: inherit;
+            z-index: 99;
+
+            .subitem{
+                font-size: 11px;
+                padding: 12px 20px;
+
+                &:hover{
+                    background-color: #dedede;
+                }
+            }
+
+            
         }
     }
 }

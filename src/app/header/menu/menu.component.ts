@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem, MenuState } from 'src/app/Models/menu.model';
+import  {Observable}  from 'rxjs';
+import {Store}  from '@ngrx/store';
+import * as MenuActions from './../../actions/menu.actions';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  menu$: Observable<any> = this.store.select(state => state.menu);
 
-  ngOnInit(): void {
+  constructor(private store: Store<{menu: MenuState}>) {
+   }
+
+  ngOnInit() {
+    this.store.dispatch({ type: MenuActions.menuRequest.type });
   }
 
 }

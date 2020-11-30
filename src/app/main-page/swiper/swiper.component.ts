@@ -1,6 +1,6 @@
 import { ElementRef } from '@angular/core';
 import { Component, AfterViewInit } from '@angular/core';
-import {Swiper} from 'swiper';
+import {Swiper} from 'swiper/bundle';
 
 @Component({
   selector: 'app-swiper',
@@ -8,13 +8,12 @@ import {Swiper} from 'swiper';
   styleUrls: ['./swiper.component.scss']
 })
 export class SwiperComponent implements AfterViewInit {
-  swiper:Swiper;
+  public swiper:Swiper;
   constructor(private elementRef: ElementRef) {}
 
   ngAfterViewInit(){
-    this.swiper = new Swiper(this.elementRef.nativeElement.querySelector('.swiper-container'), {
-      slidesPerView: 12,
-      freeMode: true,
+    this.swiper = new Swiper('.swiper-container', {
+      slidesPerView: 2,
 
       breakpoints:{
         900:{
