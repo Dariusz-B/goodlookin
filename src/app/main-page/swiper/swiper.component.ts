@@ -1,4 +1,3 @@
-import { ElementRef } from '@angular/core';
 import { Component, AfterViewInit } from '@angular/core';
 import {Swiper} from 'swiper/bundle';
 
@@ -9,7 +8,7 @@ import {Swiper} from 'swiper/bundle';
 })
 export class SwiperComponent implements AfterViewInit {
   public swiper:Swiper;
-  constructor(private elementRef: ElementRef) {}
+  constructor() {}
 
   ngAfterViewInit(){
     this.swiper = new Swiper('.swiper-container', {
