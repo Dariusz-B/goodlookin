@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem, MenuState } from 'src/app/Models/menu.model';
+import { MenuState } from 'src/app/models/menu.model';
 import  {Observable}  from 'rxjs';
 import {Store}  from '@ngrx/store';
 import * as MenuActions from './../../actions/menu.actions';

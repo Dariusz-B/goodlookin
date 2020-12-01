@@ -1,6 +1,6 @@
 import  {Action, createReducer, on}  from  '@ngrx/store'
 import * as MenuActions from '../actions/menu.actions'
-import {MenuState} from './../Models/menu.model'
+import {MenuState} from './../models/menu.model'
 
 export const MenuInitial : MenuState = {
     menuItems: [],

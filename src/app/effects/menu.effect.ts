@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { EMPTY } from 'rxjs';
 import { map, mergeMap, catchError, filter, withLatestFrom } from 'rxjs/operators';
-import { MenuService } from './../Services/menu.service';
+import { MenuService } from './../services/menu.service';
 import * as MenuActions from '../actions/menu.actions'
  
 @Injectable()

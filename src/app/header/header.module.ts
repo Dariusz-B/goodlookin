@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { MenuComponent } from './menu/menu.component';
-import { MenuService } from '../Services/menu.service';
+import { MenuService } from '../services/menu.service';
 import { EffectsModule } from '@ngrx/effects';
 import { MenuEffects } from '../effects/menu.effect';
 
