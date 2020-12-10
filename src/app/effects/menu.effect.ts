@@ -1,25 +1,31 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { EMPTY } from 'rxjs';
-import { map, mergeMap, catchError, filter, withLatestFrom } from 'rxjs/operators';
+import { map, mergeMap, catchError, filter, withLatestFrom, take } from 'rxjs/operators';
 import { MenuService } from './../services/menu.service';
 import * as MenuActions from '../actions/menu.actions'
+import { Store } from '@ngrx/store';
+import { MenuState } from '../models/menu.model';
+import { menuLoaded } from '.';
  
 @Injectable()
 export class MenuEffects {
  
   loadMenu$ = createEffect(() => this.actions$.pipe(
     ofType(MenuActions.menuRequest.type),
+    withLatestFrom(this.store.select(state => console.log(state.menu.loaded))),
+    filter(([state]) => true),
     mergeMap(() => this.menuService.getMenu()
       .pipe(
         map(menu => ({ type: MenuActions.menuSuccess.type, menu: menu })),
-        catchError(() => EMPTY)
+        catchError(() => {return EMPTY})
       ))
     )
   );
  
   constructor(
     private actions$: Actions,
-    private menuService: MenuService
+    private menuService: MenuService,
+    private store: Store<{menu: MenuState}>
   ) {}
 }

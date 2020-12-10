@@ -13,11 +13,13 @@ import { MenuEffects } from './effects/menu.effect';
 import * as menuReducer from './reducers/menu.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-
+import { CategoryPageComponent } from './category-page/category-page.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CategoryPageComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +27,8 @@ import { environment } from '../environments/environment';
     HeaderModule,
     MainPageModule,
     HttpClientModule,
+    RouterModule,
+    AppRoutingModule,
     StoreModule.forRoot({menu: menuReducer.reducer}, {}),
     EffectsModule.forRoot([MenuEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })

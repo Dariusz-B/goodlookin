@@ -2,7 +2,7 @@
     <div class="item" *ngFor="let menuItem of (menu$ | async).menuItems">
         {{menuItem.name}}<img *ngIf="menuItem.child" src="./../../../assets/svg/iconmonstr-arrow-80.svg">
         <div *ngIf="menuItem.child" class="subitem_container">
-            <div *ngFor="let subitem of menuItem.child" class="subitem">{{subitem.name}}</div>
+            <div [routerLink]="'/category'" *ngFor="let subitem of menuItem.child" class="subitem">{{subitem.name}}</div>
         </div>
     </div>
 </div>

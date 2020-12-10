@@ -6,12 +6,13 @@ import { MenuComponent } from './menu/menu.component';
 import { MenuService } from '../services/menu.service';
 import { EffectsModule } from '@ngrx/effects';
 import { MenuEffects } from '../effects/menu.effect';
+import { RouterModule } from '@angular/router';
 
 
 
 @NgModule({
   declarations: [HeaderComponent, TopBarComponent, MenuComponent],
-  imports: [CommonModule,EffectsModule.forFeature([MenuEffects])],
+  imports: [CommonModule, RouterModule, EffectsModule.forFeature([MenuEffects])],
   exports:[HeaderComponent],
   providers:[MenuService]
 })
