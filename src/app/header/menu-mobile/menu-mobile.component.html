@@ -1,18 +1,18 @@
 <div class="menu__mobile">
     <div class="logo__menu">
         <a [routerLink]="''" href="#">
-            <img  src="./../../../assets/images/logo.png">
+            <img src="assets/images/logo.png">
         </a>
     </div>
     
     <div class="open__button">
 
-        <img id="mobileMenu__button" (click)="toggleMenu()" src="./../../../assets/svg/iconmonstr-menu-2.svg">
+        <img id="mobileMenu__button" (click)="toggleMenu()" src="assets/svg/iconmonstr-menu-2.svg">
     </div>
     
     <div *ngIf="showMenu" class="menu__container" id="mobileMenu__container">
         <div class="menu__item" *ngFor="let menuItem of (menu$ | async).menuItems; let i = index" (click)="toggleChildren(i)">
-            {{menuItem.name}}<img *ngIf="menuItem.child" src="./../../../assets/svg/iconmonstr-arrow-80.svg">
+            {{menuItem.name}}<img *ngIf="menuItem.child" src="assets/svg/iconmonstr-arrow-80.svg">
             <div *ngIf="menuItem.child && opened == i" class="subitem_container">
                 <div [routerLink]="'/category'" *ngFor="let subitem of menuItem.child" class="subitem">{{subitem.name}}</div>
             </div>
