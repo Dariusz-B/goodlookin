@@ -8,7 +8,7 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss",
-          "skipTests":true
+          "skipTests": true
         }
       },
       "root": "",
@@ -122,8 +122,13 @@
               "devServerTarget": "goodlookin:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "goodlookin"
 }
