@@ -7,7 +7,7 @@ export const menuRequest = createAction(
 
 export const menuSuccess = createAction(
     '[Backend API] Get menu success',
-    props<{ menu: MenuItem[] }>()
+    props<{ menu: MenuItem[]}>()
   );
 
 export const menuFail = createAction(

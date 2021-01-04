@@ -7,11 +7,12 @@ import { MenuService } from '../services/menu.service';
 import { EffectsModule } from '@ngrx/effects';
 import { MenuEffects } from '../effects/menu.effect';
 import { RouterModule } from '@angular/router';
+import { MenuMobileComponent } from './menu-mobile/menu-mobile.component';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, TopBarComponent, MenuComponent],
+  declarations: [HeaderComponent, TopBarComponent, MenuComponent, MenuMobileComponent],
   imports: [CommonModule, RouterModule, EffectsModule.forFeature([MenuEffects])],
   exports:[HeaderComponent],
   providers:[MenuService]

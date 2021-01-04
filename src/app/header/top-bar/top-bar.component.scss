@@ -9,6 +9,21 @@
         flex-direction: column;
     }
 
+    .menu__mobile{
+        width: auto;
+
+        @media (max-width: 900px){
+            width: 90%;
+        }
+    }
+
+    .logo__menu{
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .content-right{
         display: flex;
         align-items: center;

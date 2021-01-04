@@ -1,0 +1,6 @@
+.main__menu{
+    display: block;
+    @media (max-width: 900px){
+        display: none;
+    }
+}

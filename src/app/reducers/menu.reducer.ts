@@ -10,9 +10,9 @@ export const MenuInitial : MenuState = {
 
 const menuReducer = createReducer(
     MenuInitial,
-    on(MenuActions.menuRequest, state => ({ ...state, loading: true })),
+    on(MenuActions.menuRequest, state => ({ ...state })),
     on(MenuActions.menuFail,    state => ({ ...state, loading: false })),
-    on(MenuActions.menuSuccess, (state, {menu}) => ({ ...state, loading: false, loaded: true, menuItems: menu})),
+    on(MenuActions.menuSuccess, (state, {menu}) => ({ ...state, loading: false, menuItems: menu, loaded: true}))
 );
   
 export function reducer(state: MenuState | undefined, action: Action) {

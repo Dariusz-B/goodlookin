@@ -6,18 +6,16 @@ import { MenuService } from './../services/menu.service';
 import * as MenuActions from '../actions/menu.actions'
 import { Store } from '@ngrx/store';
 import { MenuState } from '../models/menu.model';
-import { menuLoaded } from '.';
  
 @Injectable()
 export class MenuEffects {
- 
+
   loadMenu$ = createEffect(() => this.actions$.pipe(
     ofType(MenuActions.menuRequest.type),
-    withLatestFrom(this.store.select(state => console.log(state.menu.loaded))),
-    filter(([state]) => true),
+    withLatestFrom(this.store),
     mergeMap(() => this.menuService.getMenu()
       .pipe(
-        map(menu => ({ type: MenuActions.menuSuccess.type, menu: menu })),
+        map(menu => ({ type: MenuActions.menuSuccess.type, menu: menu})),
         catchError(() => {return EMPTY})
       ))
     )
