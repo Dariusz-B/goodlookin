@@ -11,6 +11,6 @@ export class MenuService {
   }
 
   getMenu(): Observable<any>{
-    return this.http.get ('http://webitrace.pl/projects/shop/source/darek/menu/getMenu');
+    return this.http.get ('https://cors-anywhere.herokuapp.com/http://webitrace.pl/projects/shop/source/darek/menu/getMenu');
   }
 }
