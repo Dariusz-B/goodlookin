@@ -32,8 +32,6 @@
                 }
             }
 
-
-
             img{
                 margin-left: 10px;
             }
@@ -79,6 +77,7 @@
                 font-size: 14px;
                 margin-top: 4px;
                 color:  #aaa;
+                text-transform: capitalize;
             }
             hr{
                 margin: 20px 0;
@@ -86,6 +85,10 @@
                 height: 1px;
                 background-color: #e5e5e5;
                 border: none;
+            }
+            .sale{
+                text-decoration: line-through;
+                color: rgb(136, 0, 0)
             }
         }
     }

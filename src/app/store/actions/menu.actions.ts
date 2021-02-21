@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { MenuItem } from '../models/menu.model';
+import { MenuItem } from '../../models/menu.model';
 
 export const menuRequest = createAction(
     '[Backend API] Get menu request'

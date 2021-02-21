@@ -1,9 +1,9 @@
 import  {Action, createReducer, on}  from  '@ngrx/store'
 import * as MenuActions from '../actions/menu.actions'
-import {MenuState} from './../models/menu.model'
+import {MenuState} from '../../models/menu.model'
 
 export const MenuInitial : MenuState = {
-    menuItems: [],
+    menuItems:[{"id":1,"name":"odzież","param":"subcategory","child":null},{"id":2,"name":"akcesoria","param":"subcategory","child":null},{"id":3,"name":"trendy","param":"trend: true","child":null},{"id":4,"name":"marki","param":"brand","child":null}],
     loaded: false,
     loading: false
 }

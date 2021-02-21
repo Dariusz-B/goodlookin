@@ -1,8 +1,8 @@
 <div class="menu maxWidth">
     <div class="item" *ngFor="let menuItem of (menu$ | async).menuItems">
-        {{menuItem.name}}<img *ngIf="menuItem.child" src="assets/svg/iconmonstr-arrow-80.svg">
-        <div *ngIf="menuItem.child" class="subitem_container">
-            <div [routerLink]="'/category'" *ngFor="let subitem of menuItem.child" class="subitem">{{subitem.name}}</div>
-        </div>
+            <div class="item_inside" (click)="goToCategory(menuItem)">{{menuItem.name}}<img *ngIf="menuItem.child" src="assets/svg/iconmonstr-arrow-80.svg"/></div>
+            <div *ngIf="menuItem.child" class="subitem_container">
+                <div (click)="goToCategory(menuItem,subitem)" *ngFor="let subitem of menuItem.child" class="subitem">{{subitem.name}}</div>
+            </div>
     </div>
 </div>

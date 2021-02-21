@@ -10,9 +10,12 @@
     .item{
         display: block;
         align-items: center;
-        padding: 12px 20px;
         position: relative;
         cursor: pointer;
+
+        .item_inside{
+            padding: 12px 20px;
+        }
         
         img{
             margin-left:  10px;
@@ -27,8 +30,6 @@
         }
 
         .subitem_container{
-            margin-top: 10px;
-            left: 0px;
             width: 100%;
             display: none;
             position: absolute;
@@ -36,8 +37,9 @@
             z-index: 99;
 
             .subitem{
+                text-align: center;
                 font-size: 11px;
-                padding: 12px 20px;
+                padding: 12px 10px;
 
                 &:hover{
                     background-color: #dedede;

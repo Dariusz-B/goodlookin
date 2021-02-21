@@ -11,10 +11,10 @@
     </div>
     
     <div *ngIf="showMenu" class="menu__container" id="mobileMenu__container">
-        <div class="menu__item" *ngFor="let menuItem of (menu$ | async).menuItems; let i = index" (click)="toggleChildren(i)">
+        <div class="menu__item" *ngFor="let menuItem of (menu$ | async).menuItems; let i = index" (click)="toggleChildren(i, menuItem)">
             {{menuItem.name}}<img *ngIf="menuItem.child" src="assets/svg/iconmonstr-arrow-80.svg">
             <div *ngIf="menuItem.child && opened == i" class="subitem_container">
-                <div [routerLink]="'/category'" *ngFor="let subitem of menuItem.child" class="subitem">{{subitem.name}}</div>
+                <div (click)="goToCategory(menuItem,subitem)" *ngFor="let subitem of menuItem.child" class="subitem">{{subitem.name}}</div>
             </div>
         </div>
         

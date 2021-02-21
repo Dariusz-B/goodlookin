@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { ProductState } from '../models/product.model';
 
 @Component({
   selector: 'app-category-page',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryPageComponent implements OnInit {
 
-  constructor() { }
+  products$: Observable<any> = this.store.select(state => state.products.products);
+
+  constructor(private store: Store<{products: ProductState}>) {
+  }
 
   ngOnInit(): void {
+
   }
+
 
 }

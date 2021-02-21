@@ -6,6 +6,7 @@ export interface MenuSubitem{
 export interface MenuItem{
     id: number,
     name: string,
+    param: string,
     child: MenuSubitem[]
 }
 

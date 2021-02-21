@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { fromEvent, Observable } from 'rxjs';
-import { MenuState } from 'src/app/models/menu.model';
-import * as MenuActions from './../../actions/menu.actions';
+import { MenuState, MenuItem, MenuSubitem } from 'src/app/models/menu.model';
+import * as MenuActions from '../../store/actions/menu.actions';
+import * as ProductActions from '../../store/actions/product.actions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu-mobile',
@@ -17,8 +19,8 @@ export class MenuMobileComponent implements OnInit {
 
   clickObservable$: Observable<Event> = fromEvent(document,'click');
 
-  constructor(private store: Store<{menu: MenuState}>) {
-   }
+  constructor(private store: Store<{menu: MenuState}>, private readonly router: Router) {
+  }
 
   ngOnInit(): void {
     this.subscribeToObservable();
@@ -36,12 +38,72 @@ export class MenuMobileComponent implements OnInit {
     this.showMenu = !this.showMenu;
   }
 
-  toggleChildren(x){
-    if(x == this.opened){
-      this.opened = -1;
+  toggleChildren(x, menuItem : MenuItem){
+    if(menuItem.child){
+      if(x == this.opened){
+        this.opened = -1;
+      }else{
+        this.opened = x;
+      }
     }else{
-      this.opened = x;
+      switch(menuItem.param){
+        case "trend":{
+            this.store.dispatch(ProductActions.productsRequest({ amount: 20, trend: true }));
+            break;
+        }
+        case "new":{
+          this.store.dispatch(ProductActions.productsRequest({ amount: 20, new: true }));
+          break;
+        }
+        case "promo":{
+          this.store.dispatch(ProductActions.productsRequest({ amount: 20, promo: true }));
+          break;
+        }
+        default:{
+          this.store.dispatch(ProductActions.productsRequest({ amount: 20, category: menuItem.name }));
+          break;
+        }
+      }
+      this.showMenu = false;
+      this.opened = -1;
     }
   }
+
+  goToCategory(menuItem : MenuItem, menuSubItem? : MenuSubitem){
+    
+    console.log(menuItem);
+    console.log(menuSubItem);
+
+    if(menuSubItem){
+      if(menuItem.param == "subcategory"){
+        this.store.dispatch(ProductActions.productsRequest({ amount: 20, subcategory: menuSubItem.name }));
+      }else{
+        this.store.dispatch(ProductActions.productsRequest({ amount: 20, brand: menuSubItem.name }));
+      }
+    }else{
+      switch(menuItem.param){
+        case "trend":{
+            this.store.dispatch(ProductActions.productsRequest({ amount: 20, trend: true }));
+            break;
+        }
+        case "new":{
+          this.store.dispatch(ProductActions.productsRequest({ amount: 20, new: true }));
+          break;
+        }
+        case "promo":{
+          this.store.dispatch(ProductActions.productsRequest({ amount: 20, promo: true }));
+          break;
+        }
+        default:{
+          this.store.dispatch(ProductActions.productsRequest({ amount: 20, category: menuItem.name }));
+          break;
+        }
+      }
+    }
+
+    this.router.navigate(['category']);
+    this.showMenu = false;
+  }
+
 
 }

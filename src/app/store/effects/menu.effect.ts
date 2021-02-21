@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { EMPTY } from 'rxjs';
 import { map, mergeMap, catchError, filter, withLatestFrom, take } from 'rxjs/operators';
-import { MenuService } from './../services/menu.service';
+import { MenuService } from '../../services/menu.service';
 import * as MenuActions from '../actions/menu.actions'
 import { Store } from '@ngrx/store';
-import { MenuState } from '../models/menu.model';
+import { MenuState } from '../../models/menu.model';
  
 @Injectable()
 export class MenuEffects {

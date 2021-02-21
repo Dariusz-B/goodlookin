@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -11,6 +11,6 @@ export class MenuService {
   }
 
   getMenu(): Observable<any>{
-    return this.http.get ('https://cors-anywhere.herokuapp.com/http://webitrace.pl/projects/shop/source/darek/menu/getMenu');
+    return this.http.get ('http://webitrace.pl/projects/shop/source/darek/menu/getMenu');
   }
 }

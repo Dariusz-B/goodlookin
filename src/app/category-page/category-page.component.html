@@ -1,1 +1,14 @@
-<p>category-page works!</p>
+<div class="products_container maxWidth">
+    <div class="line"></div>
+    <div class="products">
+        <div class="item" *ngFor="let product of (products$ | async)">
+            <div class="img_container">
+                <img src={{product.imageUrl}} alt="productImage">
+            </div>
+            <hr>
+            <h1 [className]="product.sale ? 'sale' : ''">{{(product.price/100) | number:'.2'}} Zł</h1>
+            <h1 *ngIf="product.sale">{{(product.sale_price/100) | number:'.2'}} Zł</h1>
+            <p>{{product.description}}<BR>({{product.text_id}})</p>
+        </div>
+    </div>
+</div>
