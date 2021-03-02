@@ -26,7 +26,7 @@ export class ProductService {
     .set('trend',trendStr)
     .set('new',newStr)
     .set('brand',brand);
-
-    return this.http.get ('http://webitrace.pl/projects/shop/source/darek/product/getMany',{params: httpParams});
+    
+    return this.http.get ('http://webitrace.pl/demo/api/darek/product/getMany',{params: httpParams});
   }
 }
